@@ -1,6 +1,8 @@
 #Imports, Variables and Functions
 import source
 import webbrowser
+import requests
+from bs4 import BeautifulSoup
 
 ukUS = source.ukUS
 usUK = source.usUK
@@ -8,6 +10,7 @@ loopN = 0
 wordN = ""
 wordsP = ""
 v = "1.0.0"
+vu = "api.github.com/repos/Ludacrix-Software/UK-US-english-converter/releases/latest"
 
 #Introduction
 print("")
@@ -62,10 +65,10 @@ while True:
                 """)
 
     elif command == "!cl":
-        webbrowser.open("https://github.com/TheUndercoverCEO/UK-US-english-converter/blob/main/LICENSE", new=2)
+        webbrowser.open("https://github.com/Ludacrix-Software/UK-US-english-converter/blob/main/LICENSE", new=2)
 
     elif command == "!git":
-        webbrowser.open("https://github.com/TheUndercoverCEO/UK-US-english-converter", new=2)
+        webbrowser.open("https://github.com/Ludacrix-Software/UK-US-english-converter", new=2)
 
     elif command == "!start":
         conTo = input("For UK to US type 1, for US to UK type 2: ") # Ask for US to UK or UK to US
