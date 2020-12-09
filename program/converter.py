@@ -2,15 +2,39 @@
 import source
 import webbrowser
 import requests
-from bs4 import BeautifulSoup
+import bs4
 
 ukUS = source.ukUS
 usUK = source.usUK
 loopN = 0
 wordN = ""
 wordsP = ""
+
+# Update Checking
 v = "1.0.0"
-vu = "api.github.com/repos/Ludacrix-Software/UK-US-english-converter/releases/latest"
+vu = "https://api.github.com/repos/rust-lang/rust/releases/latest"
+vUp = requests.get(vu)
+vSoup = bs4.BeautifulSoup(vUp.text, "html.parser")
+vSoup = str(vSoup)
+vSoup = vSoup.split()
+vSoup = vSoup[1]
+uL = 0
+
+while True:
+    if vSoup[uL:uL+1] == '"':
+        if vSoup[:uL] == v:
+            print("Checked for Updates. No updates Available")
+            break
+        else:
+            print("A new update is availale (" + vSoup[:uL] + "). Type !update to be taken to the releases page.")
+            from win10toast import ToastNotifier
+            toaster = ToastNotifier()
+            toaster.show_toast("A new update is availale!", "Version " + vSoup[:uL] + " of UK/US English translator is available.", threaded=True, duration=6)
+            break
+    elif uL == len(vSoup):
+        print("Failed to check for updates")
+        break
+    uL += 1
 
 #Introduction
 print("")
@@ -63,6 +87,9 @@ while True:
 
                 enter command !CL to be sent to the license on github.
                 """)
+
+    elif command == "!update":
+        webbrowser.open("https://github.com/Ludacrix-Software/UK-US-english-converter/releases", new=2)
 
     elif command == "!cl":
         webbrowser.open("https://github.com/Ludacrix-Software/UK-US-english-converter/blob/main/LICENSE", new=2)
