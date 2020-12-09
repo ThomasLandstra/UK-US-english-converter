@@ -13,27 +13,25 @@ wordsP = ""
 # Update Checking
 v = "1.0.0"
 vu = "https://api.github.com/repos/Ludacrix-Software/UK-US-english-converter/releases/latest"
-vUp = requests.get(vu)
+vUp = requests.get(vu) # Get web data
 vSoup = bs4.BeautifulSoup(vUp.text, "html.parser")
-vSoup = str(vSoup)
-vSoup = vSoup.split()
-vSoup = vSoup[1]
+vSoup = str(vSoup) # Convert to string
+vSoup = vSoup.split() # Split
+vSoup = vSoup[1] # Get Correct Part of List
 uL = 0
 
 while True:
-    if vSoup[uL:uL+1] == '"':
-        if vSoup[:uL] == v:
+    if vSoup[uL:uL+1] == '"': # If we've reached the end of the version name
+        if vSoup[:uL] == v: # If the version name is the same as current version
             print("Checked for Updates. No updates Available")
             break
-        else:
+        else: # If the version name is diffrent to the current version
             print("A new update is availale (" + vSoup[:uL] + "). Type !update to be taken to the releases page.")
+            # Notify via windows notification
             from win10toast import ToastNotifier
             toaster = ToastNotifier()
             toaster.show_toast("A new update is availale!", "Version " + vSoup[:uL] + " of UK/US English translator is available.", threaded=True, duration=6)
             break
-    elif uL == len(vSoup):
-        print("Failed to check for updates")
-        break
     uL += 1
 
 #Introduction
@@ -49,10 +47,12 @@ while True:
 
     # Help Command
     if command == "!help":
-        print("""Type !Start to begin converting from US to UK english.
-                Type !Help to open a help menu.                                                     
-                Type !C to find out about this work's copyright protection            
-                Type !Git to be sent to the GitHub repo                                              
+        print("""
+        Type !Start to begin converting from US to UK english.
+        Type !Help to open a help menu.                                                     
+        Type !C to find out about this work's copyright protection            
+        Type !Git to be sent to the GitHub repo             
+        Type !update to be sent to the release page on GitHub.                                 
                 """)
 
     elif command == "!c":
