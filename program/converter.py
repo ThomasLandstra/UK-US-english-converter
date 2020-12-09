@@ -1,11 +1,13 @@
 #Imports, Variables and Functions
 import source
 import webbrowser
+
 ukUS = source.ukUS
 usUK = source.usUK
 loopN = 0
 wordN = ""
 wordsP = ""
+v = "1.0.0"
 
 #Introduction
 print("")
@@ -21,45 +23,49 @@ while True:
     # Help Command
     if command == "!help":
         print("""Type !Start to begin converting from US to UK english.
-                Type !Help to open a help menu.
-                Type !Updates to check for updates                                                        
-                Type !CC to find out about this work's copyright protection            
+                Type !Help to open a help menu.                                                     
+                Type !C to find out about this work's copyright protection            
                 Type !Git to be sent to the GitHub repo                                              
                 """)
 
-
-    elif command == "!updates":
-        # Check vertion number on github
-        print("Updates is a WIP")
-        print("")
-
-    elif command == "!cc":
+    elif command == "!c":
        print("""
-                US/UK English Converter is protected by CC BY-SA 4.0
-                Attribution-ShareAlike 4.0 International
+                US/UK English Converter is protected by the MIT license
 
-                You are free to:
-                # Share — copy and redistribute the material in any medium or format
-                # Adapt — remix, transform, and build upon the material for any purpose, even commercially.
+                The MIT License
 
-                Under the following terms:
-                # Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made.
-                You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
-                # ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+                Copyright (c) 2020 Luacrix Software, Inc. All Rights Reserved.
+
+                Permission is hereby granted, free of charge, to any person obtaining a copy
+                of this software and associated documentation files (the "Software"), to deal
+                in the Software without restriction, including without limitation the rights
+                to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+                copies of the Software, and to permit persons to whom the Software is
+                furnished to do so, subject to the following conditions:
+
+                The above copyright notice and this permission notice shall be included in
+                all copies or substantial portions of the Software.
+
+                THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+                IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+                FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+                AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+                LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+                OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+                THE SOFTWARE.
                 
-                Attribution:
+                Optional Attribution:
                 Thomas Landstra
                 thomaslandstra@gmail.com
 
-                https://creativecommons.org/licenses/by-sa/4.0/
-                enter command !CCL to be sent to the website
+                enter command !CL to be sent to the license on github.
                 """)
 
-    elif command == "!ccl":
-        webbrowser.open("https://creativecommons.org/licenses/by-sa/4.0/", new=2)
+    elif command == "!cl":
+        webbrowser.open("https://github.com/TheUndercoverCEO/UK-US-english-converter/blob/main/LICENSE", new=2)
 
     elif command == "!git":
-        webbrowser.open("", new=2)
+        webbrowser.open("https://github.com/TheUndercoverCEO/UK-US-english-converter", new=2)
 
     elif command == "!start":
         conTo = input("For UK to US type 1, for US to UK type 2: ") # Ask for US to UK or UK to US
@@ -75,7 +81,7 @@ while True:
                 loopN += 1 
 
             print('''
-            Converted Words Here:''')
+        Converted Words Here:''')
             wordsP = ""
             for x in words: # Turn list into String
                 wordsP = wordsP + " " + x
