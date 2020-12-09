@@ -12,7 +12,7 @@ wordsP = ""
 
 # Update Checking
 v = "1.0.0"
-vu = "https://api.github.com/repos/rust-lang/rust/releases/latest"
+vu = "https://api.github.com/repos/Ludacrix-Software/UK-US-english-converter/releases/latest"
 vUp = requests.get(vu)
 vSoup = bs4.BeautifulSoup(vUp.text, "html.parser")
 vSoup = str(vSoup)
