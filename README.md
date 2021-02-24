@@ -19,6 +19,3 @@ Currently the converter only converts words that have diffrent spelling, such as
 
 ## License
 US/UK english converter is shared under the [MIT license](https://github.com/TheUndercoverCEO/UK-US-english-converter/blob/main/LICENSE)
-
-## Community
-Join our [Discod Community](https://discord.gg/gtQ4SwTfdf) for support or mroe information.
