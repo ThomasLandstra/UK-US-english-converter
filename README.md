@@ -1,7 +1,4 @@
 <p align-center>
-    <a href="https://discord.gg/gtQ4SwTfdf">
-            <img src="https://img.shields.io/discord/771640700449194004?logo=discord"
-                alt="Chat on Discord"></a>
     <a href="downloads page">
             <img src="https://img.shields.io/badge/version-1.0.0-blue"
                 alt="Current Version"></a>
