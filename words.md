@@ -1739,6 +1739,9 @@ yoghourts
 yoghurt
 yoghurts
 
+=========
+Speacial:
+curb
 
 US Words
 ==============================================================
@@ -3480,3 +3483,7 @@ yogurt
 yogurts
 yogurt
 yogurts
+
+=========
+Speacial:
+kerb
