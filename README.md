@@ -1,6 +1,4 @@
-<p align-center>
-    [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) ![Version: 0.1.0](https://img.shields.io/badge/Version-V0.1.0-blue)
-</p>
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) ![Version: 0.1.0](https://img.shields.io/badge/Version-V0.1.0-blue)
 
 # US/UK-English-Converter
 There are over 1 700 words that have some sort of a diffrence in UK/US english. This tool will quickly convert entire articles from one to the other in a few seconds.
